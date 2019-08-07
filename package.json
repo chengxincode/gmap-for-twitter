@@ -1,0 +1,31 @@
+{
+  "name": "real-time-visitor-globe",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "private": true,
+  "engines": {
+    "node": "0.10.x"
+  },
+  "homepage": "http://tutorialzine.com/2014/09/real-time-visitor-globe-nodejs-webgl/",
+  "author": "Tutorialzine.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.8.7",
+    "is-bot": "0.0.1",
+    "request": "^2.40.0",
+    "twitter": "^1.7.1"
+  },
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
