@@ -16,6 +16,7 @@
   "dependencies": {
     "express": "^4.8.7",
     "is-bot": "0.0.1",
+    "node-geocoder": "^3.23.0",
     "request": "^2.40.0",
     "twitter": "^1.7.1"
   },

@@ -120,21 +120,18 @@ $(function () {
 		});
 
 		markers = [];
-
-
+		var i = 0;
 		// For each ip location create a new marker
 		locations.forEach(function (a) {
-console.log("locations ==> " + JSON.stringify(a));
-			// Push the new markers to the markers[] array and add them to the globe, adding a popup too.
-			markers.push(WE.marker([a.latitude, a.longitude]).addTo(earth).bindPopup("<p><b>" + a.username +"</b></p> <b>" + a.text + '</b>', {maxWidth: 150,maxHeight:100, closeButton: true}));
-
-			// Color the markers depending on the country they are in.
-			$(markers[markers.length-1].element.firstChild).css('background', legend[a.country]);
-	
-			var marker2 = WE.marker([30.058056, 31.228889]).addTo(earth);
-	        marker2.bindPopup("<b>Cairo</b><br>Yay, you found me!<br />Here, enjoy another polygon..", {maxWidth: 120, closeButton: true});
-
-
+			if (a.latitude == 0 && a.longitude == 0) {
+				console.log("ignore ===> " + a.username);
+			} else {
+				console.log("count == " + i++);
+				// Push the new markers to the markers[] array and add them to the globe, adding a popup too.
+				markers.push(WE.marker([a.latitude, a.longitude]).addTo(earth).bindPopup("<p><b>" + a.username +"</b></p> <b>" + a.text + '</b>', {maxWidth: 150,maxHeight:100, closeButton: true}));
+				// Color the markers depending on the country they are in.
+				$(markers[markers.length-1].element.firstChild).css('background', legend[a.country]);
+			}
 		});
 		// Rotate the globe to the desired country from the list
 		$('.entry').on('click', function () {
